@@ -6,14 +6,12 @@
 }
 %}
 
-
-
 %%
+[A-Z] {printf("capital letter:%s\n",yytext);}
 [a-z] {printf("small letter:%s\n",yytext);}
 [ ] {}
-[A-Z] {printf("capital letter:%s \n",yytext);}
 . {printf("Invalid\n");}
-\n {return 0;}
+
 %%
 
 

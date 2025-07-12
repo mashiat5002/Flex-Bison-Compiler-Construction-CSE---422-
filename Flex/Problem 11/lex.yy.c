@@ -282,12 +282,12 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 3
-#define YY_END_OF_BUFFER 4
+#define YY_NUM_RULES 6
+#define YY_END_OF_BUFFER 7
 static yyconst short int yy_accept[14] =
     {   0,
-        2,    2,    4,    2,    3,    2,    2,    2,    2,    2,
-        1,    2,    0
+        0,    0,    7,    4,    6,    3,    2,    1,    1,    0,
+        0,    5,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -295,17 +295,17 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        1,    1,    1,    1,    4,    1,    3,    3,    3,    3,
+        1,    3,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
+        1,    1,    1,    1,    5,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
+        1,    1,    1,    1,    1,    1,    5,    5,    5,    5,
 
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    3,    3,    3,    3,    3,    3,    3,    3,
-        3,    3,    1,    1,    1,    1,    1,    1,    1,    1,
+        6,    5,    5,    5,    7,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    8,    5,    5,    5,    9,
+        5,    5,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -322,33 +322,35 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[5] =
+static yyconst int yy_meta[10] =
     {   0,
-        1,    2,    1,    1
+        1,    1,    1,    1,    1,    1,    1,    1,    1
     } ;
 
-static yyconst short int yy_base[15] =
+static yyconst short int yy_base[14] =
     {   0,
-        0,    0,   13,    0,   14,    9,    0,    8,    4,    7,
-        0,    5,   14,    5
+        0,    0,   13,   14,   14,   14,   14,   14,    3,    4,
+        2,   14,   14
     } ;
 
-static yyconst short int yy_def[15] =
+static yyconst short int yy_def[14] =
     {   0,
-       13,    1,   13,   14,   13,   14,   14,   14,   13,    9,
-       14,   14,    0,   13
+       13,    1,   13,   13,   13,   13,   13,   13,   13,   13,
+       13,   13,    0
     } ;
 
-static yyconst short int yy_nxt[19] =
+static yyconst short int yy_nxt[24] =
     {   0,
-        4,    5,    4,    6,    7,    7,   10,   11,   11,   12,
-        9,    8,   13,    3,   13,   13,   13,   13
+        4,    5,    6,    7,    8,    9,    8,    8,    8,   12,
+       11,   10,   13,    3,   13,   13,   13,   13,   13,   13,
+       13,   13,   13
     } ;
 
-static yyconst short int yy_chk[19] =
+static yyconst short int yy_chk[24] =
     {   0,
-        1,    1,    1,    1,    9,   14,    9,    9,   12,   10,
-        8,    6,    3,   13,   13,   13,   13,   13
+        1,    1,    1,    1,    1,    1,    1,    1,    1,   11,
+       10,    9,    3,   13,   13,   13,   13,   13,   13,   13,
+       13,   13,   13
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -364,12 +366,15 @@ static char *yy_last_accepting_cpos;
 char *yytext;
 #line 1 "program.l"
 #define INITIAL 0
-/* A flex program to identify string which starts with _ end _ and at least 2 character and at most 4 character in between them */
+/*Construct a Flex program to count the number of characters (alphabets, digits and symbols) separately. The program should accept multiple lines of input, and terminate on the "exit" keyword*/
 #line 4 "program.l"
     int yywrap(void){
-    return 1;
+        return 1;
     }
-#line 373 "lex.yy.c"
+    int alphabet_count=0;
+    int digit_count=0;
+    int symbol_count=0;
+#line 378 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -520,9 +525,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 10 "program.l"
+#line 12 "program.l"
 
-#line 526 "lex.yy.c"
+#line 531 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -607,20 +612,35 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 11 "program.l"
-{printf("Valid\n");}
+#line 13 "program.l"
+{alphabet_count++;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 12 "program.l"
-{printf("Invalid\n");}
+#line 14 "program.l"
+{digit_count++;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 13 "program.l"
+#line 15 "program.l"
+{}
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 16 "program.l"
+{symbol_count++;}
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 17 "program.l"
+{printf("Alphabets:%d\nDigits:%d\nSymbols:%d\n",alphabet_count,digit_count,symbol_count);return 0;}
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 19 "program.l"
 ECHO;
 	YY_BREAK
-#line 624 "lex.yy.c"
+#line 644 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1506,7 +1526,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 13 "program.l"
+#line 19 "program.l"
 
 
 int main(){

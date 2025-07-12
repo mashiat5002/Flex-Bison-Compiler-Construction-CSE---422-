@@ -8,8 +8,8 @@
 
 
 %%
-_[a-zA-Z]{2,4}_ {printf("Valid\n",yytext);}
-.* {printf("Invalid\n",yytext);}
+_[a-zA-Z]{2,4}_ {printf("Valid\n");}
+.* {printf("Invalid\n");}
 %%
 
 int main(){

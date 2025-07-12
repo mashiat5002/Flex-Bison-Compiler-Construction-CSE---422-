@@ -282,11 +282,11 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 6
-#define YY_END_OF_BUFFER 7
+#define YY_NUM_RULES 5
+#define YY_END_OF_BUFFER 6
 static yyconst short int yy_accept[10] =
     {   0,
-        0,    0,    7,    4,    5,    2,    3,    1,    0
+        0,    0,    6,    4,    5,    3,    1,    2,    0
     } ;
 
 static yyconst int yy_ec[256] =
@@ -517,7 +517,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 11 "program.l"
+#line 9 "program.l"
 
 #line 523 "lex.yy.c"
 
@@ -604,35 +604,30 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 12 "program.l"
-{printf("small letter:%s\n",yytext);}
+#line 10 "program.l"
+{printf("capital letter:%s\n",yytext);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 13 "program.l"
-{}
+#line 11 "program.l"
+{printf("small letter:%s\n",yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "program.l"
-{printf("capital letter:%s \n",yytext);}
+#line 12 "program.l"
+{}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "program.l"
+#line 13 "program.l"
 {printf("Invalid\n");}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "program.l"
-{return 0;}
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 17 "program.l"
+#line 15 "program.l"
 ECHO;
 	YY_BREAK
-#line 636 "lex.yy.c"
+#line 631 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1518,7 +1513,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 17 "program.l"
+#line 15 "program.l"
 
 
 

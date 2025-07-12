@@ -1,4 +1,4 @@
- /* A flex program that counts the number and word from a string */
+ /* A flex program that counts the number of word from a string */
 
 %{
     int yywrap(void){

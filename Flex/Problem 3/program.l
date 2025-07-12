@@ -9,8 +9,9 @@
 %}
 
 %%
-p.*q {printf("Valid\n",yytext);}
-.* {printf("Invalid\n",yytext);}
+p.*q {printf("Valid:\n");}
+.* {printf("Invalid\n");}
+
 %%
 
 int main(){
