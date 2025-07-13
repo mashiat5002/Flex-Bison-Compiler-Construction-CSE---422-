@@ -4,13 +4,13 @@
 space separated ‘S’. You can use exit(0) from stdlib.h header file, for termination mechanism.*/
 
 %{
-    int yywrap(void){
-        return 1;
-    }
+  
    int Identifiers_count=0;
    int keyword_count=0;
    int Constant_count=0;
 %}
+%option noyywrap
+
 
 %%
 

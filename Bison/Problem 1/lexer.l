@@ -3,17 +3,11 @@
 #include "parser.tab.h"
 %}
 
-digit   [0-9]
-letter  [a-zA-Z]
-id      (_|{letter})({letter}|{digit})*
-number  ({digit})+
-ws      [ \t\n]
-delim   ({ws})*
 
 %%
-{ws}                {}
-"int"               { return INT; }
-"float"             { return FLOAT; }
+\n                  {NL;}
+[ \t]                {}
+"int"|"float"|"char"  { return DT; }
 "="                 { return ASSIGN; }
 "=="                { return EQUAL; }
 "("                 { return LPAREN; }
@@ -25,5 +19,5 @@ delim   ({ws})*
 "+"                 { return ADD; }
 "-"                 { return SUB; }
 ";"                 { return SEMI; }
-{id}            { return ID; }
-{number}            { return NUM; }
+[0-9]+            { return NUM; }
+[a-zA-Z_][a-zA-Z0-9_]*     { return ID; }

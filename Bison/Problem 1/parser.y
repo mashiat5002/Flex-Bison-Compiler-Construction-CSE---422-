@@ -1,25 +1,23 @@
 %{
     #include<stdio.h>
-    extern int yylex();
+    int yylex();
     void yyerror(char *s);
 %}
 
-%token INT FLOAT ASSIGN EQUAL LPAREN RPAREN LBRACE RBRACE IF WHILE ADD SUB SEMI  ID  NUM
+%token DT FLOAT ASSIGN EQUAL LPAREN RPAREN LBRACE RBRACE IF WHILE ADD SUB SEMI  ID  NUM NL
 %start start
 
 
 %%
-start: start INT ID SEMI 
-        | IF LPAREN EXPR EQUAL EXPR RPAREN LBRACE start RBRACE
-        | /* empty */;
-EXPR: NUM | ID;
+start: CONTITION LBRACE  CONTITION RBRACE SEMI  {printf("Parsed\n");}
 
-
+CONTITION: IF  LPAREN IDORNUM  EQUAL IDORNUM RPAREN
+IDORNUM: ID|NUM
 %%
 
 void yyerror(char *s)
 {
-
+    printf("Not parsed\n");
 }
 
 int main(){
